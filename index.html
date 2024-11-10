@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简介</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header and Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('profile')">基本资料</a></li>
+                <li><a href="#" onclick="showSection('project-experience')">项目经验</a></li>
+                <li><a href="#" onclick="showSection('professional-skills')">专业技能</a></li>
+                <li><a href="#" onclick="showSection('contact')">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <!-- Home Section (initial view) -->
+        <div id="home" class="content-section active">
+            <h2>算法工程师 - 王小明</h2>
+            <p class="quote">stay hungry, stay foolish</p>
+        </div>
+
+        <!-- Basic Info Section -->
+        <div id="profile" class="content-section">
+            <h2>基本资料</h2>
+            <div class="profile-blocks">
+                <div class="profile-block">
+                    <h3>个人信息</h3>
+                    <p>姓名：王小明</p>
+                    <p>年龄：30岁</p>
+                    <p>职位：算法工程师</p>
+                </div>
+                <div class="profile-block">
+                    <h3>毕业院校</h3>
+                    <p>北京大学</p>
+                    <p>计算机科学与技术专业</p>
+                    <p>硕士研究生</p>
+                </div>
+                <div class="profile-block">
+                    <h3>职业规划</h3>
+                    <p>希望能够在人工智能领域深耕，成为资深算法工程师，并参与更多前沿技术的开发。</p>
+                </div>
+                <div class="profile-block">
+                    <h3>兴趣爱好</h3>
+                    <p>阅读、写作、编程、旅行、健身</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Experience Section -->
+        <div id="project-experience" class="content-section">
+            <h2>项目经验</h2>
+            <div class="experience-blocks">
+                <div class="experience-block">
+                    <h3>项目 1：图像分类系统开发</h3>
+                    <p>基于深度学习的卷积神经网络实现，准确率提高了15%。</p>
+                </div>
+                <div class="experience-block">
+                    <h3>项目 2：语音识别应用</h3>
+                    <p>使用 RNN 和 LSTM 网络进行语音识别，提升了语音转文本的精度。</p>
+                </div>
+                <div class="experience-block">
+                    <h3>项目 3：智能推荐系统</h3>
+                    <p>基于用户行为分析的个性化推荐引擎，用户粘性提升了20%。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Skills Section -->
+        <div id="professional-skills" class="content-section">
+            <h2>专业技能</h2>
+            <div class="skills-blocks">
+                <div class="skills-block">
+                    <h3>技能 1：Python 编程</h3>
+                    <p>熟练掌握 TensorFlow 和 PyTorch。</p>
+                </div>
+                <div class="skills-block">
+                    <h3>技能 2：深度学习</h3>
+                    <p>熟悉 CNN、RNN、GAN 等常用网络架构。</p>
+                </div>
+                <div class="skills-block">
+                    <h3>技能 3：大数据处理</h3>
+                    <p>掌握 Hadoop、Spark、Pandas 等工具。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="content-section">
+            <h2>联系方式</h2>
+            <div class="contact-blocks">
+                <div class="contact-block">
+                    <h3>邮箱</h3>
+                    <p>xiaoming@example.com</p>
+                </div>
+                <div class="contact-block">
+                    <h3>电话</h3>
+                    <p>123-4567-8901</p>
+                </div>
+                <div class="contact-block">
+                    <h3>地址</h3>
+                    <p>北京市海淀区</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p>算法工程师 - 王小明</p>
+            <p class="quote">stay hungry, stay foolish</p>
+        </footer>
+    </main>
+
+    <!-- JavaScript to handle section switching -->
+    <script>
+        let hasClicked = false; // Flag to track if the sections have already been clicked
+
+        function showSection(sectionId) {
+            // Hide the home section when a menu is clicked for the first time
+            if (!hasClicked) {
+                document.getElementById('home').style.display = 'none';
+                hasClicked = true;
+            }
+
+            // Hide all sections
+            var sections = document.querySelectorAll('.content-section');
+            sections.forEach(function (section) {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            var activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
